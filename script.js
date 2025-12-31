@@ -1,9 +1,9 @@
 //game constants and variables
 
 let direction = { x: 0, y: 0 };
-const movesound = new Audio("move.mp3");
-const foodsound = new Audio("food.mp3");
-const gameOversound = new Audio("gameover.mp3");
+const moveSound = new Audio("move.mp3");
+const foodSound = new Audio("food.mp3");
+const gameOverSound = new Audio("gameOver.mp3");
 let speed = 5;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
@@ -20,7 +20,17 @@ function main(ctime) {
   gameEngine();
 }
 function gameEngine() {
-  //Part 1
+  //Part 1 --> updating snake and food
+  // if you have eaten the food ,regenerate the food
+  if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
+    return foodSound.play();
+    snakeArr.unshift({
+      x: snakeArr[0].x + inputDir.x,
+      y: snakeArr[0].y + inputDir.y,
+    });
+    let a =2,b = 16;
+    
+  }
   //Part 2 -- > Display  / Render snake and food
   playArea.innerHtml = "";
   snakeArr.forEach((e, index) => {
@@ -39,7 +49,7 @@ function gameEngine() {
   foodElement = document.createElement("div");
   foodElement.style.gridRowStart = food.y;
   foodElement.style.gridColumnStart = food.x;
-  foodElement.classList.add("head");
+  foodElement.classList.add("food");
   playArea.appendChild(foodElement);
 }
 
