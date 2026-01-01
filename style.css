@@ -13,7 +13,7 @@ body {
   align-items: center;
 }
 #playArea {
-  background: linear-gradient(rgb(147, 249, 147), yellow);
+  background: linear-gradient(rgb(147, 249, 147), rgb(0, 255, 234));
   width: 90vmin;
   height: 92vmin;
   border: 2px solid black;
@@ -31,4 +31,19 @@ body {
 
 .head {
   background-color: red;
+}
+#scorebox{
+    position: absolute;
+    top: 10px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+}
+
+#hiscorebox{
+    position: absolute;
+    top: 65px;
+    right: 162px;
+    font-size: 39px;
+    font-weight: bold;
 }
